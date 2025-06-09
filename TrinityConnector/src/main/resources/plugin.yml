@@ -1,0 +1,9 @@
+name: TrinityConnector
+version: '1.0-SNAPSHOT'
+main: com.nemiqstudios.trinityConnector.TrinityConnector
+api-version: '1.21'
+prefix: [ TrinityConnector ]
+load: STARTUP
+authors: [ soaresgus ]
+description: Utilitarios para manipulacao do DataBase
+website: https://github.com/soaresgus

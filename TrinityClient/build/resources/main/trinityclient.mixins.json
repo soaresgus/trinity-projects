@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.nemiqstudios.trinityclient.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "TrinityClient.refmap.json",
+  "client": [
+    "LogoDrawerMixin",
+    "SplashRendererMixin",
+    "TitleScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

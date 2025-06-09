@@ -1,0 +1,9 @@
+name: TrinityNametag
+version: '1.0-SNAPSHOT'
+main: com.nemiqstudios.trinityNametag.TrinityNametag
+api-version: '1.21'
+prefix: [ TrinityNametag ]
+load: STARTUP
+authors: [ soaresgus ]
+description: Adiciona tags no nome dos jogadores.
+website: https://github.com/soaresgus
