@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: trinity-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: admin      # senha do root
+      MYSQL_DATABASE: trinity-db      # banco inicial
+      MYSQL_USER: app_user            # usuário extra
+      MYSQL_PASSWORD: user123         # senha do usuário extra
+    ports:
+      - '3306:3306'
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: trinity-phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: app_user       # usuário padrão apresentado no login
+      PMA_PASSWORD: user123    # senha do app_user (ou use root/admin)
+
+volumes:
+  db_data:

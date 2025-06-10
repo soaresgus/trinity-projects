@@ -1,0 +1,50 @@
+name: TrinityEssentials
+version: '1.0-SNAPSHOT'
+main: com.nemiqstudios.trinityEssentials.TrinityEssentials
+api-version: '1.21'
+prefix: [ TrinityEssentials ]
+load: POSTWORLD
+authors: [ soaresgus ]
+description: Eventos e comandos essenciais para o funcionamento do servidor
+website: https://github.com/soaresgus
+commands:
+  spawn:
+    permission: trinity.essentials.spawn
+    permission-message: '§cVocê não possui permissão.'
+  setspawn:
+    permission: trinity.essentials.setspawn
+    permission-message: '§cVocê não possui permissão.'
+  tpa:
+    permission: trinity.essentials.tpa
+    permission-message: '§cVocê não possui permissão.'
+  tpaccept:
+    permission: trinity.essentials.tpaccept
+    permission-message: '§cVocê não possui permissão.'
+    aliases:
+      - tpaceitar
+  tpadeny:
+    permission: trinity.essentials.tpadeny
+    permission-message: '§cVocê não possui permissão.'
+    aliases:
+      - tparecusar
+  tpacancel:
+    permission: trinity.essentials.tpacancel
+    permission-message: '§cVocê não possui permissão.'
+    aliases:
+      - tpacancelar
+permissions:
+  trinity.essentials.bypass.blockedcommand:
+    default: false
+    description: Permite que utilize os comandos bloqueados
+  trinity.essentials.spawn:
+    default: true
+  trinity.essentials.setspawn:
+    default: false
+  trinity.essentials.tpa:
+    default: true
+  trinity.essentials.tpaccept:
+    default: true
+  trinity.essentials.tpadeny:
+    default: true
+  trinity.essentials.tpacancel:
+    default: true

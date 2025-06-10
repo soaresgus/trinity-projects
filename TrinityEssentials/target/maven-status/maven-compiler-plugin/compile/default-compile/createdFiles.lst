@@ -1,0 +1,6 @@
+com\nemiqstudios\trinityEssentials\TrinityEssentials.class
+com\nemiqstudios\trinityEssentials\events\GeneralEvents.class
+com\nemiqstudios\trinityEssentials\commands\spawn\SpawnCommand.class
+com\nemiqstudios\trinityEssentials\commands\tpa\TpaCommand$1.class
+com\nemiqstudios\trinityEssentials\commands\spawn\SetspawnCommand.class
+com\nemiqstudios\trinityEssentials\commands\tpa\TpaCommand.class
