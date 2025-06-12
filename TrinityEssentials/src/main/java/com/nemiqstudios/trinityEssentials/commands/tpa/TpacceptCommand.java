@@ -1,0 +1,62 @@
+package com.nemiqstudios.trinityEssentials.commands.tpa;
+
+import com.nemiqstudios.trinityEssentials.utils.tpa.TpaController;
+import com.nemiqstudios.trinityEssentials.utils.tpa.TpaRequest;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class TpacceptCommand implements CommandExecutor {
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
+        if (sender instanceof Player) {
+            Player player = (Player) sender;
+
+            if (args.length == 0) {
+                player.sendMessage(ChatColor.RED + "Utilização: /" + lbl +" <jogador>.");
+                return false;
+            }
+
+            String tpaSenderNameString = args[0];
+
+            if (Bukkit.getPlayer(tpaSenderNameString) == null) {
+                player.sendMessage(ChatColor.RED + "Jogador não encontrado.");
+                return false;
+            }
+
+            Player tpaSender = Bukkit.getPlayer(tpaSenderNameString);
+            boolean isPlayerReceiveTpa = TpaController.tpaRequests.stream()
+                    .anyMatch(req -> req.getReceiver().equals(player));
+
+            if (!isPlayerReceiveTpa) {
+                player.sendMessage(ChatColor.RED + "Você não possui solicitações pendentes.");
+                return false;
+            }
+
+            TpaRequest request = TpaController.tpaRequests.stream()
+                    .filter(req ->
+                            req.getSender().equals(tpaSender) &&
+                                    req.getReceiver().equals(player))
+                    .findFirst()
+                    .orElse(null);
+
+            if (request == null) {
+                player.sendMessage(ChatColor.RED + "Você não possui solicitações pendentes do jogador " + tpaSender.getName() + ".");
+                return false;
+            }
+
+            request.getSender().teleport(request.getReceiver().getLocation());
+            TpaController.tpaRequests.remove(request);
+
+            player.sendMessage(ChatColor.GREEN + "Solicitação de teleporte de " + request.getSender().getName() + " foi aceita.");
+            request.getSender().sendMessage(ChatColor.GREEN + "Sua solicitação de teleporte enviada para " + request.getReceiver().getName() + " foi aceita.");
+            return true;
+        }
+
+        return false;
+    }
+}

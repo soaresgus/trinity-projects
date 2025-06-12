@@ -14,6 +14,16 @@ import java.util.List;
 public class GeneralEvents implements Listener {
     private TrinityEssentials plugin;
 
+    /*
+    * TODO
+    *  Colocar uma mensagem de entrar e sair
+    *
+    *  [+] Ninjay_
+    *
+    *  [-] Ninjay_
+    *
+    * */
+
     public GeneralEvents(TrinityEssentials plugin) {
         this.plugin = plugin;
     }
@@ -23,7 +33,7 @@ public class GeneralEvents implements Listener {
         Player player = event.getPlayer();
         Location spawnLocation = plugin.getLocalesConfig().getLocation("spawn");
 
-        event.setJoinMessage(null);
+        event.setJoinMessage("§8[§a+§8] §7" + player.getName());
 
         if(spawnLocation == null) {
             player.teleport(player.getWorld().getSpawnLocation());
@@ -35,7 +45,8 @@ public class GeneralEvents implements Listener {
 
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
-        event.setQuitMessage(null);
+        Player player = event.getPlayer();
+        event.setQuitMessage("§8[§c-§8] §7" + player.getName());
     }
 
     @EventHandler(ignoreCancelled = true)

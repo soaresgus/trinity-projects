@@ -3,6 +3,9 @@ package com.nemiqstudios.trinityEssentials;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SetspawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SpawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpaCommand;
+import com.nemiqstudios.trinityEssentials.commands.tpa.TpacancelCommand;
+import com.nemiqstudios.trinityEssentials.commands.tpa.TpacceptCommand;
+import com.nemiqstudios.trinityEssentials.commands.tpa.TpadenyCommand;
 import com.nemiqstudios.trinityEssentials.events.GeneralEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -29,6 +32,9 @@ public final class TrinityEssentials extends JavaPlugin {
         getCommand("spawn").setExecutor(new SpawnCommand(this));
 
         getCommand("tpa").setExecutor(new TpaCommand());
+        getCommand("tpaccept").setExecutor(new TpacceptCommand());
+        getCommand("tpadeny").setExecutor(new TpadenyCommand());
+        getCommand("tpacancel").setExecutor(new TpacancelCommand());
 
         Bukkit.getPluginManager().registerEvents(new GeneralEvents(this), this);
 

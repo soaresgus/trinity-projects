@@ -1,6 +1,8 @@
 package com.nemiqstudios.trinityEssentials.commands.tpa;
 
 import com.nemiqstudios.trinityEssentials.TrinityEssentials;
+import com.nemiqstudios.trinityEssentials.utils.tpa.TpaController;
+import com.nemiqstudios.trinityEssentials.utils.tpa.TpaRequest;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -11,20 +13,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.util.ArrayList;
-
 public class TpaCommand implements CommandExecutor {
-    public static ArrayList<Player> playersListHasSendTpa = new ArrayList<>();
-    public static ArrayList<Player> playersListHasReceiveTpa = new ArrayList<>();
-    private static int cooldown = 30;
-
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
         if(sender instanceof Player) {
             Player player = (Player) sender;
 
             if(args.length == 0) {
-                player.sendMessage(ChatColor.RED + "Utilização: /tpa <jogador>.");
+                player.sendMessage(ChatColor.RED + "Utilização: /" + lbl +" <jogador>.");
                 return false;
             }
 
@@ -35,7 +31,7 @@ public class TpaCommand implements CommandExecutor {
                 return false;
             }
 
-            if(playersListHasSendTpa.contains(player)) {
+            if(TpaController.playersListHasSendTpa.contains(player)) {
                 player.sendMessage(ChatColor.RED + "Aguarde para enviar outra solicitação.");
                 return false;
             }
@@ -52,20 +48,25 @@ public class TpaCommand implements CommandExecutor {
 
             player.sendMessage(ChatColor.YELLOW + "Foi enviado uma solitação de teleporte para " + receiverName + ", para cancelar utilize /tpacancel.");
 
-            playersListHasSendTpa.add(player);
+            TpaRequest request = new TpaRequest(player, receiver);
 
-            playersListHasReceiveTpa.add(receiver);
+            TpaController.playersListHasSendTpa.add(player);
+            TpaController.tpaRequests.add(request);
 
             new BukkitRunnable() {
                 @Override
                 public void run() {
-                    playersListHasSendTpa.remove(player);
-                    player.sendMessage(ChatColor.YELLOW + "Solicitação de teleporte para " + receiverName + " expirada.");
-                    receiver.sendMessage(ChatColor.YELLOW + "Solicitação de teleporte solicitada por " + fromName + " expirada.");
-                }
-            }.runTaskLaterAsynchronously(TrinityEssentials.getInstance(), cooldown * 20L);
+                    if(TpaController.tpaRequests.contains(request)) {
+                        player.sendMessage(ChatColor.YELLOW + "Solicitação de teleporte para " + receiverName + " expirada.");
+                        receiver.sendMessage(ChatColor.YELLOW + "Solicitação de teleporte solicitada por " + fromName + " expirada.");
+                    }
 
-            TextComponent header = new TextComponent("§eVocê recebeu um pedido de teleporte de §a§l" + fromName + "\n \n");
+                    TpaController.playersListHasSendTpa.remove(player);
+                    TpaController.tpaRequests.remove(request);
+                }
+            }.runTaskLaterAsynchronously(TrinityEssentials.getInstance(), TpaController.cooldown * 20L);
+
+            TextComponent header = new TextComponent(" \n§eVocê recebeu um pedido de teleporte de §a§l" + fromName + "\n \n");
 
             TextComponent accept = new TextComponent("         §a§l[ACEITAR]");
             accept.setClickEvent(new ClickEvent(
@@ -78,11 +79,10 @@ public class TpaCommand implements CommandExecutor {
             TextComponent deny = new TextComponent("§c§l[RECUSAR]");
             deny.setClickEvent(new ClickEvent(
                     ClickEvent.Action.RUN_COMMAND,
-                    "/tpadeny"
+                    "/tpadeny " + fromName
             ));
 
             receiver.spigot().sendMessage(header, accept, spacer, deny, spacer);
-
             return true;
         }
         return false;

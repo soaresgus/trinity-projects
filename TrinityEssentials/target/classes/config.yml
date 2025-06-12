@@ -28,3 +28,5 @@ blocked-commands:
   - 'minecraft:plugins'
   - 'minecraft:version'
   - 'minecraft:help'
+  - 'lp'
+  - 'skin'
