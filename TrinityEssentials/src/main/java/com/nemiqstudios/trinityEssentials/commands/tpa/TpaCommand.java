@@ -19,6 +19,11 @@ public class TpaCommand implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
 
+            if(!player.hasPermission("trinity.essentials.tpa")) {
+                player.sendMessage(ChatColor.RED + "Sem permissao.");
+                return true;
+            }
+
             if(args.length == 0) {
                 player.sendMessage(ChatColor.RED + "Utilização: /" + lbl +" <jogador>.");
                 return false;

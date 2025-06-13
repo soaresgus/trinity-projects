@@ -9,42 +9,57 @@ description: Eventos e comandos essenciais para o funcionamento do servidor
 website: https://github.com/soaresgus
 commands:
   spawn:
-    permission: trinity.essentials.spawn
-    permission-message: '§cVocê não possui permissão.'
   setspawn:
-    permission: trinity.essentials.setspawn
-    permission-message: '§cVocê não possui permissão.'
   tpa:
-    permission: trinity.essentials.tpa
-    permission-message: '§cVocê não possui permissão.'
   tpaccept:
-    permission: trinity.essentials.tpaccept
-    permission-message: '§cVocê não possui permissão.'
     aliases:
       - tpaceitar
   tpadeny:
-    permission: trinity.essentials.tpadeny
-    permission-message: '§cVocê não possui permissão.'
     aliases:
       - tparecusar
   tpacancel:
-    permission: trinity.essentials.tpacancel
-    permission-message: '§cVocê não possui permissão.'
     aliases:
       - tpacancelar
+  home:
+  homes:
+  sethome:
+    aliases:
+      - setarhome
+      - definirhome
+  delhome:
+    aliases:
+      - deletehome
+      - deletarhome
+      - excluirhome
+  public:
+    aliases:
+      - publica
+  private:
 permissions:
   trinity.essentials.bypass.blockedcommand:
     default: false
     description: Permite que utilize os comandos bloqueados
   trinity.essentials.spawn:
-    default: true
+    default: false
   trinity.essentials.setspawn:
     default: false
   trinity.essentials.tpa:
-    default: true
+    default: false
   trinity.essentials.tpaccept:
-    default: true
+    default: false
   trinity.essentials.tpadeny:
-    default: true
+    default: false
   trinity.essentials.tpacancel:
-    default: true
+    default: false
+  trinity.essentials.home:
+    default: false
+  trinity.essentials.homes:
+    default: false
+  trinity.essentials.sethome:
+    default: false
+  trinity.essentials.delhome:
+    default: false
+  trinity.essentials.public:
+    default: false
+  trinity.essentials.private:
+    default: false

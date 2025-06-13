@@ -15,6 +15,11 @@ public class TpacancelCommand implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
 
+            if(!player.hasPermission("trinity.essentials.tpacancel")) {
+                player.sendMessage(ChatColor.RED + "Sem permissao.");
+                return true;
+            }
+
             TpaRequest request = TpaController.tpaRequests.stream()
                     .filter(req -> req.getSender().equals(player))
                     .findFirst()

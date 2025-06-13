@@ -19,6 +19,12 @@ public class SetspawnCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
         if(sender instanceof Player) {
             Player player = (Player) sender;
+
+            if(!player.hasPermission("trinity.essentials.setspawn")) {
+                player.sendMessage(ChatColor.RED + "Sem permissao.");
+                return true;
+            }
+
             Location currentLocation = player.getLocation();
 
             plugin.getLocalesConfig().set("spawn", currentLocation);

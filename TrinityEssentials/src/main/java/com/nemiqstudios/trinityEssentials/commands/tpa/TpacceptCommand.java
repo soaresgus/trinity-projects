@@ -16,6 +16,11 @@ public class TpacceptCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
+            if(!player.hasPermission("trinity.essentials.tpaccept")) {
+                player.sendMessage(ChatColor.RED + "Sem permissao.");
+                return true;
+            }
+
             if (args.length == 0) {
                 player.sendMessage(ChatColor.RED + "Utilização: /" + lbl +" <jogador>.");
                 return false;

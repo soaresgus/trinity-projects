@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityEssentials;
 
+import com.nemiqstudios.trinityEssentials.commands.home.*;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SetspawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SpawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpaCommand;
@@ -7,6 +8,7 @@ import com.nemiqstudios.trinityEssentials.commands.tpa.TpacancelCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpacceptCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpadenyCommand;
 import com.nemiqstudios.trinityEssentials.events.GeneralEvents;
+import com.nemiqstudios.trinityEssentials.utils.database.DatabaseManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -21,12 +23,25 @@ public final class TrinityEssentials extends JavaPlugin {
     private FileConfiguration localesConfig = null;
     private File localesFile = null;
 
+    public DatabaseManager dbManager;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
         instance = this;
         saveDefaultConfig();
         saveDefaultLocales();
+
+        String host = this.getConfig().getString("database.host");
+        int port = this.getConfig().getInt("database.port");
+        String db = this.getConfig().getString("database.db");
+        String user = this.getConfig().getString("database.user");
+        String password = this.getConfig().getString("database.password");
+
+        dbManager = new DatabaseManager(host, port, db, user, password);
+        dbManager.connect();
+
+        dbManager.createEssentialsHomesTable();
 
         getCommand("setspawn").setExecutor(new SetspawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));
@@ -36,6 +51,13 @@ public final class TrinityEssentials extends JavaPlugin {
         getCommand("tpadeny").setExecutor(new TpadenyCommand());
         getCommand("tpacancel").setExecutor(new TpacancelCommand());
 
+        getCommand("home").setExecutor(new HomeCommand());
+        getCommand("homes").setExecutor(new HomesCommand());
+        getCommand("sethome").setExecutor(new SethomeCommand());
+        getCommand("delhome").setExecutor(new DelhomeCommand());
+        getCommand("public").setExecutor(new PublicCommand());
+        getCommand("private").setExecutor(new PrivateCommand());
+
         Bukkit.getPluginManager().registerEvents(new GeneralEvents(this), this);
 
         Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "[TrinityEssentials] Plugin iniciado com sucesso!");
@@ -44,6 +66,7 @@ public final class TrinityEssentials extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        dbManager.disconnect();
         Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "[TrinityEssentials] Plugin encerrado com sucesso!");
     }
 

@@ -1,6 +1,7 @@
 package com.nemiqstudios.trinityEssentials.commands.spawn;
 
 import com.nemiqstudios.trinityEssentials.TrinityEssentials;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -19,6 +20,12 @@ public class SpawnCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
         if(sender instanceof Player) {
             Player player = (Player) sender;
+
+            if(!player.hasPermission("trinity.essentials.spawn")) {
+                player.sendMessage(ChatColor.RED + "Sem permissao.");
+                return true;
+            }
+
             Location spawnLocation = plugin.getLocalesConfig().getLocation("spawn");
 
             player.getWorld().playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
