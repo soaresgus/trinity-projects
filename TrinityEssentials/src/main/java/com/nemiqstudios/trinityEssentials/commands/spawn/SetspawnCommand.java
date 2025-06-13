@@ -9,12 +9,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class SetspawnCommand implements CommandExecutor {
-    private TrinityEssentials plugin;
-
-    public SetspawnCommand(TrinityEssentials plugin) {
-        this.plugin = plugin;
-    }
-
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
         if(sender instanceof Player) {
@@ -27,8 +21,8 @@ public class SetspawnCommand implements CommandExecutor {
 
             Location currentLocation = player.getLocation();
 
-            plugin.getLocalesConfig().set("spawn", currentLocation);
-            plugin.saveLocales();
+            TrinityEssentials.getInstance().getLocalesConfig().set("spawn", currentLocation);
+            TrinityEssentials.getInstance().saveLocales();
 
             player.getWorld().setSpawnLocation(currentLocation);
 

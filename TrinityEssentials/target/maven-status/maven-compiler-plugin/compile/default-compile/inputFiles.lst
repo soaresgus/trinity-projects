@@ -10,6 +10,8 @@ C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\ne
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\commands\tpa\TpacceptCommand.java
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\commands\tpa\TpaCommand.java
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\commands\tpa\TpadenyCommand.java
+C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\commands\warp\SetwarpCommand.java
+C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\commands\warp\WarpsCommand.java
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\events\GeneralEvents.java
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\TrinityEssentials.java
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\utils\database\DatabaseManager.java
@@ -17,3 +19,4 @@ C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\ne
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\utils\home\Home.java
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\utils\tpa\TpaController.java
 C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\utils\tpa\TpaRequest.java
+C:\NemiqStudios\trinity-pixelmon\projects\TrinityEssentials\src\main\java\com\nemiqstudios\trinityEssentials\utils\warp\WarpController.java

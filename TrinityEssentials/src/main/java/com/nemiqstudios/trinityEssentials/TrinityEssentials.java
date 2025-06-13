@@ -7,16 +7,21 @@ import com.nemiqstudios.trinityEssentials.commands.tpa.TpaCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpacancelCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpacceptCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpadenyCommand;
+import com.nemiqstudios.trinityEssentials.commands.warp.SetwarpCommand;
+import com.nemiqstudios.trinityEssentials.commands.warp.WarpsCommand;
 import com.nemiqstudios.trinityEssentials.events.GeneralEvents;
 import com.nemiqstudios.trinityEssentials.utils.database.DatabaseManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 public final class TrinityEssentials extends JavaPlugin {
     private static TrinityEssentials instance;
@@ -43,8 +48,8 @@ public final class TrinityEssentials extends JavaPlugin {
 
         dbManager.createEssentialsHomesTable();
 
-        getCommand("setspawn").setExecutor(new SetspawnCommand(this));
-        getCommand("spawn").setExecutor(new SpawnCommand(this));
+        getCommand("setspawn").setExecutor(new SetspawnCommand());
+        getCommand("spawn").setExecutor(new SpawnCommand());
 
         getCommand("tpa").setExecutor(new TpaCommand());
         getCommand("tpaccept").setExecutor(new TpacceptCommand());
@@ -57,6 +62,9 @@ public final class TrinityEssentials extends JavaPlugin {
         getCommand("delhome").setExecutor(new DelhomeCommand());
         getCommand("public").setExecutor(new PublicCommand());
         getCommand("private").setExecutor(new PrivateCommand());
+
+        getCommand("warps").setExecutor(new WarpsCommand());
+        getCommand("setwarp").setExecutor(new SetwarpCommand());
 
         Bukkit.getPluginManager().registerEvents(new GeneralEvents(this), this);
 

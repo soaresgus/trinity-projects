@@ -1,6 +1,8 @@
 package com.nemiqstudios.trinityEssentials.events;
 
 import com.nemiqstudios.trinityEssentials.TrinityEssentials;
+import com.nemiqstudios.trinityEssentials.utils.warp.WarpController;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,16 +15,6 @@ import java.util.List;
 
 public class GeneralEvents implements Listener {
     private TrinityEssentials plugin;
-
-    /*
-    * TODO
-    *  Colocar uma mensagem de entrar e sair
-    *
-    *  [+] Ninjay_
-    *
-    *  [-] Ninjay_
-    *
-    * */
 
     public GeneralEvents(TrinityEssentials plugin) {
         this.plugin = plugin;
@@ -53,6 +45,27 @@ public class GeneralEvents implements Listener {
     public void onCommand(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
         String cmd = event.getMessage().substring(1).split(" ")[0].toLowerCase();
+
+        if(cmd.equalsIgnoreCase("warps")) {
+            event.setCancelled(true);
+
+            if(!player.hasPermission("trinity.essentials.warps")) {
+                player.sendMessage(ChatColor.RED + "Sem permissão.");
+                return;
+            }
+
+            try {
+                WarpController controller = new WarpController();
+                List<String> warpsName = controller.getAllWarpsName(TrinityEssentials.getInstance());
+                String warpsNameConcatenated = String.join(", ", warpsName);
+
+                player.sendMessage(ChatColor.YELLOW + "Warps disponíveis: §7"+warpsNameConcatenated);
+            } catch (Exception e) {
+                player.sendMessage(ChatColor.RED + "Ocorreu um erro ao listar as warps. Tente novamente.");
+                throw new RuntimeException(e);
+            }
+        }
+
         List<String> blockedCommands = TrinityEssentials.getInstance().getConfig().getStringList("blocked-commands");
 
         if(blockedCommands != null) {

@@ -24,7 +24,7 @@ commands:
   homes:
   sethome:
     aliases:
-      - setarhome
+      - criarhome
       - definirhome
   delhome:
     aliases:
@@ -35,6 +35,16 @@ commands:
     aliases:
       - publica
   private:
+  warp:
+  warps:
+  setwarp:
+    aliases:
+      - definirwarp
+      - criarwarp
+  delwarp:
+    aliases:
+      - deletarwarp
+      - excluirwarp
 permissions:
   trinity.essentials.bypass.blockedcommand:
     default: false
@@ -62,4 +72,12 @@ permissions:
   trinity.essentials.public:
     default: false
   trinity.essentials.private:
+    default: false
+  trinity.essentials.warp:
+    default: false
+  trinity.essentials.warps:
+    default: false
+  trinity.essentials.setwarp:
+    default: false
+  trinity.essentials.delwarp:
     default: false
