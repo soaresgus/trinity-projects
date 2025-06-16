@@ -1,6 +1,8 @@
 package com.nemiqstudios.trinityEssentials;
 
 import com.nemiqstudios.trinityEssentials.commands.echest.EchestCommand;
+import com.nemiqstudios.trinityEssentials.commands.gamemode.GamemodeCommand;
+import com.nemiqstudios.trinityEssentials.commands.gamemode.GamemodeTabCompleter;
 import com.nemiqstudios.trinityEssentials.commands.home.*;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SetspawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SpawnCommand;
@@ -72,6 +74,9 @@ public final class TrinityEssentials extends JavaPlugin {
         getCommand("delwarp").setExecutor(new DelwarpCommand());
 
         getCommand("echest").setExecutor(new EchestCommand());
+
+        getCommand("gamemode").setExecutor(new GamemodeCommand());
+        getCommand("gamemode").setTabCompleter(new GamemodeTabCompleter());
 
         Bukkit.getPluginManager().registerEvents(new GeneralEvents(this), this);
 

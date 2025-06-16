@@ -49,6 +49,9 @@ commands:
     aliases:
       - ec
       - enderchest
+  gamemode:
+    aliases:
+      - gm
 permissions:
   trinity.essentials.bypass.blockedcommand:
     default: false
@@ -86,4 +89,6 @@ permissions:
   trinity.essentials.delwarp:
     default: false
   trinity.essentials.echest:
+    default: false
+  trinity.essentials.gamemode:
     default: false

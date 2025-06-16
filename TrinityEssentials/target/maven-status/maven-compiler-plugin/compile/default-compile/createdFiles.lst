@@ -14,9 +14,11 @@ com\nemiqstudios\trinityEssentials\utils\database\HomeDAO.class
 com\nemiqstudios\trinityEssentials\utils\warp\WarpController.class
 com\nemiqstudios\trinityEssentials\commands\warp\WarpsCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\DelhomeCommand.class
+com\nemiqstudios\trinityEssentials\commands\gamemode\GamemodeTabCompleter.class
 com\nemiqstudios\trinityEssentials\commands\warp\SetwarpCommand.class
 com\nemiqstudios\trinityEssentials\utils\tpa\TpaRequest.class
 com\nemiqstudios\trinityEssentials\utils\home\Home.class
+com\nemiqstudios\trinityEssentials\commands\gamemode\GamemodeCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\PrivateCommand.class
 com\nemiqstudios\trinityEssentials\commands\warp\DelwarpCommand.class
 com\nemiqstudios\trinityEssentials\utils\tpa\TpaController.class
