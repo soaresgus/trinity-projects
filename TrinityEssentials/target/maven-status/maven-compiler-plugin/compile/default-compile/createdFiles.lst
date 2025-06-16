@@ -3,14 +3,20 @@ com\nemiqstudios\trinityEssentials\commands\tpa\TpadenyCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\HomesCommand.class
 com\nemiqstudios\trinityEssentials\events\GeneralEvents.class
 com\nemiqstudios\trinityEssentials\commands\echest\EchestCommand.class
+com\nemiqstudios\trinityEssentials\commands\feed\FeedCommand.class
+com\nemiqstudios\trinityEssentials\commands\trash\TrashCommand.class
 com\nemiqstudios\trinityEssentials\commands\spawn\SpawnCommand.class
 com\nemiqstudios\trinityEssentials\commands\tpa\TpaCommand$1.class
+com\nemiqstudios\trinityEssentials\commands\hat\HatCommand.class
 com\nemiqstudios\trinityEssentials\commands\warp\WarpCommand.class
 com\nemiqstudios\trinityEssentials\commands\spawn\SetspawnCommand.class
 com\nemiqstudios\trinityEssentials\commands\tpa\TpacceptCommand.class
 com\nemiqstudios\trinityEssentials\utils\database\DatabaseManager.class
+com\nemiqstudios\trinityEssentials\events\GeneralEvents$1.class
 com\nemiqstudios\trinityEssentials\TrinityEssentials.class
+com\nemiqstudios\trinityEssentials\utils\back\BackController.class
 com\nemiqstudios\trinityEssentials\utils\database\HomeDAO.class
+com\nemiqstudios\trinityEssentials\commands\back\BackCommand.class
 com\nemiqstudios\trinityEssentials\utils\warp\WarpController.class
 com\nemiqstudios\trinityEssentials\commands\warp\WarpsCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\DelhomeCommand.class
@@ -26,3 +32,6 @@ com\nemiqstudios\trinityEssentials\commands\home\HomeCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\PublicCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\SethomeCommand.class
 com\nemiqstudios\trinityEssentials\commands\tpa\TpaCommand.class
+com\nemiqstudios\trinityEssentials\events\BackEvents.class
+com\nemiqstudios\trinityEssentials\commands\craft\CraftCommand.class
+com\nemiqstudios\trinityEssentials\commands\ping\PingCommand.class

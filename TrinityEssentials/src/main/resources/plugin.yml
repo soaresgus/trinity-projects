@@ -35,6 +35,8 @@ commands:
     aliases:
       - publica
   private:
+    aliases:
+      - privado
   warp:
   warps:
   setwarp:
@@ -52,6 +54,21 @@ commands:
   gamemode:
     aliases:
       - gm
+  ping:
+  craft:
+  feed:
+    aliases:
+      - fome
+  trash:
+    aliases:
+      - lixeira
+      - lixo
+  hat:
+    aliases:
+      - chapeu
+  back:
+    aliases:
+      - voltar
 permissions:
   trinity.essentials.bypass.blockedcommand:
     default: false
@@ -91,4 +108,16 @@ permissions:
   trinity.essentials.echest:
     default: false
   trinity.essentials.gamemode:
+    default: false
+  trinity.essentials.ping:
+    default: false
+  trinity.essentials.craft:
+    default: false
+  trinity.essentials.feed:
+    default: false
+  trinity.essentials.trash:
+    default: false
+  trinity.essentials.hat:
+    default: false
+  trinity.essentials.back:
     default: false

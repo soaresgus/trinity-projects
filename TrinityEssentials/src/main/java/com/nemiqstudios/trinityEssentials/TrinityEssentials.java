@@ -1,32 +1,36 @@
 package com.nemiqstudios.trinityEssentials;
 
+import com.nemiqstudios.trinityEssentials.commands.back.BackCommand;
+import com.nemiqstudios.trinityEssentials.commands.craft.CraftCommand;
 import com.nemiqstudios.trinityEssentials.commands.echest.EchestCommand;
+import com.nemiqstudios.trinityEssentials.commands.feed.FeedCommand;
 import com.nemiqstudios.trinityEssentials.commands.gamemode.GamemodeCommand;
 import com.nemiqstudios.trinityEssentials.commands.gamemode.GamemodeTabCompleter;
+import com.nemiqstudios.trinityEssentials.commands.hat.HatCommand;
 import com.nemiqstudios.trinityEssentials.commands.home.*;
+import com.nemiqstudios.trinityEssentials.commands.ping.PingCommand;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SetspawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SpawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpaCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpacancelCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpacceptCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpadenyCommand;
+import com.nemiqstudios.trinityEssentials.commands.trash.TrashCommand;
 import com.nemiqstudios.trinityEssentials.commands.warp.DelwarpCommand;
 import com.nemiqstudios.trinityEssentials.commands.warp.SetwarpCommand;
 import com.nemiqstudios.trinityEssentials.commands.warp.WarpCommand;
 import com.nemiqstudios.trinityEssentials.commands.warp.WarpsCommand;
+import com.nemiqstudios.trinityEssentials.events.BackEvents;
 import com.nemiqstudios.trinityEssentials.events.GeneralEvents;
 import com.nemiqstudios.trinityEssentials.utils.database.DatabaseManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
 
 public final class TrinityEssentials extends JavaPlugin {
     private static TrinityEssentials instance;
@@ -78,7 +82,20 @@ public final class TrinityEssentials extends JavaPlugin {
         getCommand("gamemode").setExecutor(new GamemodeCommand());
         getCommand("gamemode").setTabCompleter(new GamemodeTabCompleter());
 
+        getCommand("ping").setExecutor(new PingCommand());
+
+        getCommand("craft").setExecutor(new CraftCommand());
+
+        getCommand("feed").setExecutor(new FeedCommand());
+
+        getCommand("trash").setExecutor(new TrashCommand());
+
+        getCommand("hat").setExecutor(new HatCommand());
+
+        getCommand("back").setExecutor(new BackCommand());
+
         Bukkit.getPluginManager().registerEvents(new GeneralEvents(this), this);
+        Bukkit.getPluginManager().registerEvents(new BackEvents(), this);
 
         Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "[TrinityEssentials] Plugin iniciado com sucesso!");
     }
