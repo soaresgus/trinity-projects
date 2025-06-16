@@ -22,7 +22,7 @@ public class SpawnCommand implements CommandExecutor {
 
             Location spawnLocation = TrinityEssentials.getInstance().getLocalesConfig().getLocation("spawn");
 
-            player.getWorld().playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1f, 1f);
+            player.getWorld().playSound(player, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1f, 1f);
 
             if(spawnLocation == null) {
                 player.teleport(player.getWorld().getSpawnLocation());

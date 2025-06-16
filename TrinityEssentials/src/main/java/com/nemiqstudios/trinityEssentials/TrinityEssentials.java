@@ -7,7 +7,9 @@ import com.nemiqstudios.trinityEssentials.commands.tpa.TpaCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpacancelCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpacceptCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpadenyCommand;
+import com.nemiqstudios.trinityEssentials.commands.warp.DelwarpCommand;
 import com.nemiqstudios.trinityEssentials.commands.warp.SetwarpCommand;
+import com.nemiqstudios.trinityEssentials.commands.warp.WarpCommand;
 import com.nemiqstudios.trinityEssentials.commands.warp.WarpsCommand;
 import com.nemiqstudios.trinityEssentials.events.GeneralEvents;
 import com.nemiqstudios.trinityEssentials.utils.database.DatabaseManager;
@@ -63,8 +65,10 @@ public final class TrinityEssentials extends JavaPlugin {
         getCommand("public").setExecutor(new PublicCommand());
         getCommand("private").setExecutor(new PrivateCommand());
 
+        getCommand("warp").setExecutor(new WarpCommand());
         getCommand("warps").setExecutor(new WarpsCommand());
         getCommand("setwarp").setExecutor(new SetwarpCommand());
+        getCommand("delwarp").setExecutor(new DelwarpCommand());
 
         Bukkit.getPluginManager().registerEvents(new GeneralEvents(this), this);
 
