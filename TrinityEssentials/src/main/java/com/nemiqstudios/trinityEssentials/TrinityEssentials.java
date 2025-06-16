@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityEssentials;
 
+import com.nemiqstudios.trinityEssentials.commands.echest.EchestCommand;
 import com.nemiqstudios.trinityEssentials.commands.home.*;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SetspawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SpawnCommand;
@@ -69,6 +70,8 @@ public final class TrinityEssentials extends JavaPlugin {
         getCommand("warps").setExecutor(new WarpsCommand());
         getCommand("setwarp").setExecutor(new SetwarpCommand());
         getCommand("delwarp").setExecutor(new DelwarpCommand());
+
+        getCommand("echest").setExecutor(new EchestCommand());
 
         Bukkit.getPluginManager().registerEvents(new GeneralEvents(this), this);
 

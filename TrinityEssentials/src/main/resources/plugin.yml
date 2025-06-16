@@ -45,6 +45,10 @@ commands:
     aliases:
       - deletarwarp
       - excluirwarp
+  echest:
+    aliases:
+      - ec
+      - enderchest
 permissions:
   trinity.essentials.bypass.blockedcommand:
     default: false
@@ -80,4 +84,6 @@ permissions:
   trinity.essentials.setwarp:
     default: false
   trinity.essentials.delwarp:
+    default: false
+  trinity.essentials.echest:
     default: false

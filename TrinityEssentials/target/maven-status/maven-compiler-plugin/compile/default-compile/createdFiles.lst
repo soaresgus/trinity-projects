@@ -2,6 +2,7 @@ com\nemiqstudios\trinityEssentials\commands\tpa\TpacancelCommand.class
 com\nemiqstudios\trinityEssentials\commands\tpa\TpadenyCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\HomesCommand.class
 com\nemiqstudios\trinityEssentials\events\GeneralEvents.class
+com\nemiqstudios\trinityEssentials\commands\echest\EchestCommand.class
 com\nemiqstudios\trinityEssentials\commands\spawn\SpawnCommand.class
 com\nemiqstudios\trinityEssentials\commands\tpa\TpaCommand$1.class
 com\nemiqstudios\trinityEssentials\commands\warp\WarpCommand.class
