@@ -1,0 +1,15 @@
+name: TrinityPixelmon
+version: '1.0-SNAPSHOT'
+main: com.nemiqstudios.trinityPixelmon.TrinityPixelmon
+api-version: '1.21'
+prefix: [ TrinityPixelmon ]
+authors: [ soaresgus ]
+description: Eventos e comandos essenciais envolvendo o Mod Pixelmon
+website: https://github.com/soaresgus
+commands:
+  pokeheal:
+    aliases:
+      - pokecurar
+permissions:
+  trinity.pixelmon.pokeheal:
+    default: false
