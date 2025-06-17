@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityEssentials.commands.hat;
 
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -17,7 +18,7 @@ public class HatCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.hat")) {
-                player.sendMessage(ChatColor.RED + "Sem permissão.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

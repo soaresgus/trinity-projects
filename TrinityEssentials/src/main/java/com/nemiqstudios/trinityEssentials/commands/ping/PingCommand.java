@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityEssentials.commands.ping;
 
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,7 +17,7 @@ public class PingCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.ping")) {
-                player.sendMessage(ChatColor.RED + "Sem permissão.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

@@ -14,7 +14,9 @@ public class BackEvents implements Listener {
         Player player = event.getPlayer();
 
         BackController controller = new BackController();
-        controller.setPlayerLastLocation(player);
+        if (!controller.getPlayersWhoDied().contains(player)) {
+            controller.setPlayerLastLocation(player);
+        }
     }
 
     @EventHandler
@@ -23,5 +25,6 @@ public class BackEvents implements Listener {
 
         BackController controller = new BackController();
         controller.setPlayerLastLocation(player);
+        controller.setPlayerInDeathList(player);
     }
 }

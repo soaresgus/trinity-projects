@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityEssentials.commands.feed;
 
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -15,7 +16,7 @@ public class FeedCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.feed")) {
-                player.sendMessage(ChatColor.RED + "Sem permissão.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

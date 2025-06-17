@@ -1,6 +1,7 @@
 package com.nemiqstudios.trinityEssentials.commands.tpa;
 
 import com.nemiqstudios.trinityEssentials.TrinityEssentials;
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import com.nemiqstudios.trinityEssentials.utils.tpa.TpaController;
 import com.nemiqstudios.trinityEssentials.utils.tpa.TpaRequest;
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -20,7 +21,7 @@ public class TpaCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.tpa")) {
-                player.sendMessage(ChatColor.RED + "Sem permissao.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

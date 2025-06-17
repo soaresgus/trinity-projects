@@ -1,5 +1,6 @@
 com\nemiqstudios\trinityEssentials\commands\tpa\TpacancelCommand.class
 com\nemiqstudios\trinityEssentials\commands\tpa\TpadenyCommand.class
+com\nemiqstudios\trinityEssentials\utils\permissionMessages\PermissionMessages.class
 com\nemiqstudios\trinityEssentials\commands\home\HomesCommand.class
 com\nemiqstudios\trinityEssentials\events\GeneralEvents.class
 com\nemiqstudios\trinityEssentials\commands\echest\EchestCommand.class
@@ -24,6 +25,7 @@ com\nemiqstudios\trinityEssentials\commands\gamemode\GamemodeTabCompleter.class
 com\nemiqstudios\trinityEssentials\commands\warp\SetwarpCommand.class
 com\nemiqstudios\trinityEssentials\utils\tpa\TpaRequest.class
 com\nemiqstudios\trinityEssentials\utils\home\Home.class
+com\nemiqstudios\trinityEssentials\commands\repair\RepairCommand.class
 com\nemiqstudios\trinityEssentials\commands\gamemode\GamemodeCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\PrivateCommand.class
 com\nemiqstudios\trinityEssentials\commands\warp\DelwarpCommand.class
@@ -32,6 +34,7 @@ com\nemiqstudios\trinityEssentials\commands\home\HomeCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\PublicCommand.class
 com\nemiqstudios\trinityEssentials\commands\home\SethomeCommand.class
 com\nemiqstudios\trinityEssentials\commands\tpa\TpaCommand.class
+com\nemiqstudios\trinityEssentials\commands\light\LightCommand.class
 com\nemiqstudios\trinityEssentials\events\BackEvents.class
 com\nemiqstudios\trinityEssentials\commands\craft\CraftCommand.class
 com\nemiqstudios\trinityEssentials\commands\ping\PingCommand.class

@@ -1,6 +1,7 @@
 package com.nemiqstudios.trinityEssentials.commands.back;
 
 import com.nemiqstudios.trinityEssentials.utils.back.BackController;
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -16,7 +17,7 @@ public class BackCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.back")) {
-                player.sendMessage(ChatColor.RED + "Sem permissão.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 
@@ -29,6 +30,11 @@ public class BackCommand implements CommandExecutor {
             }
 
             player.teleport(playerLastLocation);
+
+            if(controller.getPlayersWhoDied().contains(player)) {
+                controller.removePlayerFromDeathList(player);
+            }
+
             player.sendMessage(ChatColor.GREEN + "Você foi teleportado para sua última localização.");
         }
         return false;

@@ -2,6 +2,7 @@ package com.nemiqstudios.trinityEssentials.commands.warp;
 
 import com.nemiqstudios.trinityEssentials.TrinityEssentials;
 import com.nemiqstudios.trinityEssentials.utils.home.Home;
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import com.nemiqstudios.trinityEssentials.utils.warp.WarpController;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -19,7 +20,7 @@ public class WarpsCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.warps")) {
-                player.sendMessage(ChatColor.RED + "Sem permissão.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

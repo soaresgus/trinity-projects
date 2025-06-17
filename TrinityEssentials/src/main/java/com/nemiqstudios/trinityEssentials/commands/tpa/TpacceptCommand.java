@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityEssentials.commands.tpa;
 
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import com.nemiqstudios.trinityEssentials.utils.tpa.TpaController;
 import com.nemiqstudios.trinityEssentials.utils.tpa.TpaRequest;
 import org.bukkit.Bukkit;
@@ -17,7 +18,7 @@ public class TpacceptCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.tpaccept")) {
-                player.sendMessage(ChatColor.RED + "Sem permissao.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

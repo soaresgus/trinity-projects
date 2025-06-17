@@ -1,6 +1,7 @@
 package com.nemiqstudios.trinityEssentials.commands.spawn;
 
 import com.nemiqstudios.trinityEssentials.TrinityEssentials;
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -16,7 +17,7 @@ public class SpawnCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.spawn")) {
-                player.sendMessage(ChatColor.RED + "Sem permissao.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

@@ -3,6 +3,7 @@ package com.nemiqstudios.trinityEssentials.commands.home;
 import com.nemiqstudios.trinityEssentials.TrinityEssentials;
 import com.nemiqstudios.trinityEssentials.utils.database.HomeDAO;
 import com.nemiqstudios.trinityEssentials.utils.home.Home;
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,7 +20,7 @@ public class HomesCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.essentials.homes")) {
-                player.sendMessage(ChatColor.RED + "Sem permissão.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

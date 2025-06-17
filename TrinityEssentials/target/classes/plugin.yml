@@ -1,5 +1,5 @@
 name: TrinityEssentials
-version: '1.0-SNAPSHOT'
+version: '1.0'
 main: com.nemiqstudios.trinityEssentials.TrinityEssentials
 api-version: '1.21'
 prefix: [ TrinityEssentials ]
@@ -69,6 +69,12 @@ commands:
   back:
     aliases:
       - voltar
+  repair:
+    aliases:
+      - reparar
+  light:
+    aliases:
+      - luz
 permissions:
   trinity.essentials.bypass.blockedcommand:
     default: false
@@ -120,4 +126,8 @@ permissions:
   trinity.essentials.hat:
     default: false
   trinity.essentials.back:
+    default: false
+  trinity.essentials.repair:
+    default: false
+  trinity.essentials.light:
     default: false

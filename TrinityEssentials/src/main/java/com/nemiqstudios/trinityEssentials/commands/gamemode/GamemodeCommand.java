@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityEssentials.commands.gamemode;
 
+import com.nemiqstudios.trinityEssentials.utils.permissionMessages.PermissionMessages;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -16,7 +17,7 @@ public class GamemodeCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if (!player.hasPermission("trinity.essentials.gamemode")) {
-                player.sendMessage(ChatColor.RED + "Sem permissão.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

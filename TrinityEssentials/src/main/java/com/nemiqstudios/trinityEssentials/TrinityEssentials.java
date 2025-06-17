@@ -8,7 +8,9 @@ import com.nemiqstudios.trinityEssentials.commands.gamemode.GamemodeCommand;
 import com.nemiqstudios.trinityEssentials.commands.gamemode.GamemodeTabCompleter;
 import com.nemiqstudios.trinityEssentials.commands.hat.HatCommand;
 import com.nemiqstudios.trinityEssentials.commands.home.*;
+import com.nemiqstudios.trinityEssentials.commands.light.LightCommand;
 import com.nemiqstudios.trinityEssentials.commands.ping.PingCommand;
+import com.nemiqstudios.trinityEssentials.commands.repair.RepairCommand;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SetspawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.spawn.SpawnCommand;
 import com.nemiqstudios.trinityEssentials.commands.tpa.TpaCommand;
@@ -93,6 +95,10 @@ public final class TrinityEssentials extends JavaPlugin {
         getCommand("hat").setExecutor(new HatCommand());
 
         getCommand("back").setExecutor(new BackCommand());
+
+        getCommand("repair").setExecutor(new RepairCommand());
+
+        getCommand("light").setExecutor(new LightCommand());
 
         Bukkit.getPluginManager().registerEvents(new GeneralEvents(this), this);
         Bukkit.getPluginManager().registerEvents(new BackEvents(), this);
