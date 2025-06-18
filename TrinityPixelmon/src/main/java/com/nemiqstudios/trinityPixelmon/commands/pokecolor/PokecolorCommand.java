@@ -7,6 +7,7 @@ import com.pixelmonmod.pixelmon.api.storage.StorageProxy;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -62,6 +63,8 @@ public class PokecolorCommand implements CommandExecutor {
 
                     selectedPokemon.setNickname(selectedPokemonNicknameWithoutColor);
                     selectedPokemon.setNickname("&" + chatColor.getChar() + selectedPokemonCurrentNickname);
+
+                    player.playSound(player, Sound.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, 1f ,1f);
                     player.sendMessage(ChatColor.GREEN + "Cor do nome do Pokémon " + selectedPokemon.getSpecies().getLocalizedName() + " alterado com sucesso!");
                 }
             } catch (Exception e) {
