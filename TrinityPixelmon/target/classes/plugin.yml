@@ -10,6 +10,11 @@ commands:
   pokeheal:
     aliases:
       - pokecurar
+  pokecolor:
+    aliases:
+      - corpokemon
 permissions:
   trinity.pixelmon.pokeheal:
+    default: false
+  trinity.pixelmon.pokecolor:
     default: false

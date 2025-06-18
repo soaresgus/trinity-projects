@@ -1,5 +1,7 @@
 package com.nemiqstudios.trinityPixelmon;
 
+import com.nemiqstudios.trinityPixelmon.commands.pokecolor.PokecolorCommand;
+import com.nemiqstudios.trinityPixelmon.commands.pokecolor.PokecolorTabCompleter;
 import com.nemiqstudios.trinityPixelmon.commands.pokeheal.PokehealCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,6 +13,9 @@ public final class TrinityPixelmon extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getCommand("pokeheal").setExecutor(new PokehealCommand());
+
+        getCommand("pokecolor").setExecutor(new PokecolorCommand());
+        getCommand("pokecolor").setTabCompleter(new PokecolorTabCompleter());
 
         Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "[TrinityPixelmon] Plugin iniciado com sucesso!");
     }
