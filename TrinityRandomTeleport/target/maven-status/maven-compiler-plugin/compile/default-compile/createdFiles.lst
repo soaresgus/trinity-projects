@@ -1,0 +1,5 @@
+com\nemiqstudios\trinityRandomTeleport\utils\RandomTeleportController.class
+com\nemiqstudios\trinityRandomTeleport\TrinityRandomTeleport.class
+com\nemiqstudios\trinityRandomTeleport\events\PortalTeleportEvent.class
+com\nemiqstudios\trinityRandomTeleport\utils\RandomTeleportController$1.class
+com\nemiqstudios\trinityRandomTeleport\commands\RandomTeleportCommand.class

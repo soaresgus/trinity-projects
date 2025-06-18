@@ -1,0 +1,16 @@
+name: TrinityRandomTeleport
+version: '1.0-SNAPSHOT'
+main: com.nemiqstudios.trinityRandomTeleport.TrinityRandomTeleport
+api-version: '1.21'
+prefix: [ TrinityRandomTeleport ]
+authors: [ soaresgus ]
+description: Gerenciador do teleport aleatorio
+website: https://github.com/soaresgus
+commands:
+  randomteleport:
+    aliases:
+      - rtp
+      - explorar
+permissions:
+  trinity.randomteleport.rtp:
+    default: false

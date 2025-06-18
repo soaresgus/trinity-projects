@@ -1,0 +1,3 @@
+teleportWorld: 'world'
+minCoord: -1000
+maxCoord: 10000
