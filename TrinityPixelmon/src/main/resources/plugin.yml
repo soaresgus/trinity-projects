@@ -16,10 +16,15 @@ commands:
   pc:
     aliases:
       - computador
+  hatch:
+    aliases:
+      - chocar
 permissions:
   trinity.pixelmon.pokeheal:
     default: false
   trinity.pixelmon.pokecolor:
     default: false
   trinity.pixelmon.pc:
+    default: false
+  trinity.pixelmon.hatch:
     default: false

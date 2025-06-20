@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityPixelmon.commands.pc;
 
+import com.nemiqstudios.trinityPixelmon.utils.permissionMessages.PermissionMessages;
 import com.pixelmonmod.pixelmon.api.storage.PCStorage;
 import com.pixelmonmod.pixelmon.api.storage.StorageProxy;
 import net.minecraft.server.level.ServerPlayer;
@@ -18,7 +19,7 @@ public class PcCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if(!player.hasPermission("trinity.pixelmon.pc")) {
-                player.sendMessage(ChatColor.RED + "Você não possui permissão para utilizar este comando.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

@@ -1,5 +1,6 @@
 package com.nemiqstudios.trinityPixelmon.commands.pokeheal;
 
+import com.nemiqstudios.trinityPixelmon.utils.permissionMessages.PermissionMessages;
 import com.pixelmonmod.pixelmon.api.pokemon.Pokemon;
 import com.pixelmonmod.pixelmon.api.storage.PartyStorage;
 import com.pixelmonmod.pixelmon.api.storage.StorageProxy;
@@ -18,7 +19,7 @@ public class PokehealCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             if (!player.hasPermission("trinity.pixelmon.pokeheal")) {
-                player.sendMessage(ChatColor.RED + "Você não possui permissão para executar este comando.");
+                player.sendMessage(PermissionMessages.NO_PERMISSION_DEFAULT.getText());
                 return true;
             }
 

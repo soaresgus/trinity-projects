@@ -1,5 +1,7 @@
 package com.nemiqstudios.trinityPixelmon;
 
+import com.nemiqstudios.trinityPixelmon.commands.hatch.HatchCommand;
+import com.nemiqstudios.trinityPixelmon.commands.hatch.HatchTabCompleter;
 import com.nemiqstudios.trinityPixelmon.commands.pc.PcCommand;
 import com.nemiqstudios.trinityPixelmon.commands.pokecolor.PokecolorCommand;
 import com.nemiqstudios.trinityPixelmon.commands.pokecolor.PokecolorTabCompleter;
@@ -19,6 +21,9 @@ public final class TrinityPixelmon extends JavaPlugin {
         getCommand("pokecolor").setTabCompleter(new PokecolorTabCompleter());
 
         getCommand("pc").setExecutor(new PcCommand());
+
+        getCommand("hatch").setExecutor(new HatchCommand());
+        getCommand("hatch").setTabCompleter(new HatchTabCompleter());
 
         Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "[TrinityPixelmon] Plugin iniciado com sucesso!");
     }
